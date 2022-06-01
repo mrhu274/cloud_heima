@@ -11,7 +11,7 @@ spring:
       server-addr: localhost:8848
       discovery:
         cluster-name: HB #集群名称
-        namespace: 9d17056f-b4a6-4135-b9a2-07dbbc1654bb #命名空间 dev
+#        namespace: 9d17056f-b4a6-4135-b9a2-07dbbc1654bb #命名空间 dev
         ephemeral: false #是否是临时实例
 
   application:
