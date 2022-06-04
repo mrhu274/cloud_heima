@@ -27,10 +27,13 @@ public class UserController {
 
     @GetMapping("now")
     public String now() {
+
         System.out.println(patternProperties.getDateformat());
         System.out.println(patternProperties.getEnvSharedValue());
     return LocalDateTime.now().format(DateTimeFormatter.ofPattern(patternProperties.getDateformat()));
     }
+
+
 
     /**
      * 路径： /user/110
@@ -39,7 +42,8 @@ public class UserController {
      * @return 用户
      */
     @GetMapping("/{id}")
-    public User queryById(@PathVariable("id") Long id) {
+    public User queryById(@PathVariable("id") Long id ,@RequestHeader(value = "Truth",required = false) String truth) {
+        System.out.println(truth);
         return userService.queryById(id);
     }
 }
